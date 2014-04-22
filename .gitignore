@@ -29,3 +29,8 @@ node_modules
 
 # Bower
 bower
+
+# Ignore grunted files
+public/js
+public/fonts
+public/styles
