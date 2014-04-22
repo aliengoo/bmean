@@ -11,8 +11,8 @@
     var self;
 
     function Thing(){
-      self = this;
       EventEmitter.call(this);
+      self = this;
     }
 
     util.inherits(Thing, EventEmitter);
@@ -23,5 +23,5 @@
     };
 
     return Thing;
-  });
+  }());
 }());
