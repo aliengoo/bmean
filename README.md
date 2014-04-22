@@ -14,7 +14,48 @@ There is plenty I still need to learn (as you'll see from the code).  If you pla
 
 ## Philosophy
 
-Clone, install dependencies, configure, grunt, run, browse.
+To get a working application running in under two minutes.
+
+## NPM Dependencies
+
+* [ExpressJS 4.x](http://expressjs.com/) - Web application framework for node.
+* [mongoose](http://mongoosejs.com/) - MongoDB object modeling designed to work in an asynchronous environment.
+
+Not specifically required, but included because their handy...
+* [lodash](http://lodash.com/) - A utility library delivering consistency, customization, performance, & extras.
+* [momentjs](http://momentjs.com/) - A javascript date library for parsing, validating, manipulating, and formatting dates.
+* [stringjs](http://stringjs.com/) - JavaScript library for the browser or for Node.js that provides extra String methods. 
+
+### Development Dependencies
+
+* [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat) - Used specifically for AngularJS application files (makes debugging in the browser a little bit easier than using source maps - subject to change)
+* [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy) - Copies files from _bower_ directory to _/public/_ directory, e.g. font-awesome fonts, toastr css files, etc, etc.
+* [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) - 'A fool with a tool is still a fool' - Helps reduce foolishness.
+* [grunt-contrib-less](https://github.com/gruntjs/grunt-contrib-less) - LESS processor.  Used for Bootstrap, Font Awesome and _less/style.less_ processing.
+* [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) - Used specifically for vendor files, your application files will use grunt-contrib-concat.
+* [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) - It likes to watch.
+
+## Bower
+
+* [angular](https://angularjs.org/)
+* [angular-ui-router](https://github.com/angular-ui/ui-router)
+* [angular-cookie](https://docs.angularjs.org/api/ngCookies/service/$cookies)
+* [angular-resource](https://docs.angularjs.org/api/ngResource/service/$resource)
+* [angular-animate](https://docs.angularjs.org/guide/animations)
+* [angular-bootstrap](http://angular-ui.github.io/bootstrap/)
+* [angular-ui-utils](https://github.com/angular-ui/ui-utils)
+* [angular-i18n](https://docs.angularjs.org/guide/i18n)
+* [bootstrap](http://getbootstrap.com/)
+* [animate.css](http://daneden.github.io/animate.css/) - Useful animation css classes
+* [font-awesome](http://fortawesome.github.io/Font-Awesome/)
+* [lodash](http://lodash.com/)
+* [modernizr](http://modernizr.com/)
+* [momentjs](http://momentjs.com/) - Does dates
+* [stringjs](http://stringjs.com/) - Does strings
+* [toastr](https://github.com/CodeSeven/toastr) - Notification libary.  Used by ```toastrSvc``` - to toast - mmmmmm, toast.
+* [amplify](http://amplifyjs.com/) - Local storage wrapper (among other things).  Used in ```storeSvc``` for storing stuff.
+
+
 
 ### Client-side JavaScript
 
