@@ -26,6 +26,7 @@ module.exports = function (grunt) {
           'bower/momentjs/min/moment.min.js',
           'bower/stringjs/lib/string.min.js',
           'bower/amplify/lib/amplify.min.js',
+          'bower/toastr/toastr.min.js',
           'bower/angular/angular.min.js',
           'bower/angular-i18n/angular-locale_en-gb.js',
           'bower/angular-animate/angular-animate.min.js',
@@ -60,7 +61,7 @@ module.exports = function (grunt) {
             expand : true,
             cwd : 'bower/font-awesome/fonts/',
             src : ['**'],
-            dest : 'public/styles/fonts/',
+            dest : 'public/fonts/',
             flatten : true,
             filter : 'isFile'
           }
