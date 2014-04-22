@@ -1,0 +1,37 @@
+{
+  "name": "bmean",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aliengoo/bmean",
+  "authors": [
+    "glenn.aliengoo@gmail.com"
+  ],
+  "description": "Bootstrap, MongoDB, ExpressJS, AngularJS and NodeJS",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "amplify": "~1.1.2",
+    "angular-animate": "~1.2.16",
+    "angular-bootstrap": "~0.10.0",
+    "angular-cookies": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-i18n": "~1.2.16",
+    "angular-ui-utils": "~0.1.1",
+    "angular-ui-router": "~0.2.10",
+    "animate.css": "~3.1.1",
+    "bootstrap": "~3.1.1",
+    "font-awesome": "~4.0.3",
+    "lodash": "~2.4.1",
+    "modernizr": "~2.7.2",
+    "momentjs": "~2.6.0",
+    "stringjs": "~1.8.0",
+    "toastr": "~2.0.1"
+  }
+}
