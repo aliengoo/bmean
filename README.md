@@ -92,12 +92,130 @@ grunt
 
 Grunt uses _grunt-contrib-watch_, so, pretty much everything you do should get picked up.  By default, livereload runs anytime grunt restarts, so remember to install that plugin in your browser.
 
+### MongoDB
+
+If you have got a _mongod_ instance running, then from the command line
+
+```
+mongod
+```
+
+
 ### Nodemon
 
-From the command line
+From the command line (only tested on OSX)
 
 ```
 NODE_ENV=development nodemon --debug server.js
+```
+## AngularJS
+
+Anything added under the _public/app_ will automatically be included in the _public/js/app.concat.js_.
+
+## ExpressJS
+
+### Models
+
+Mongoose is used to access MongoDB.  A couple of _models_ have been included.  
+
+#### Sequence
+
+Sequence provides an Oracle-esque sequencer.
+
+```javascript
+ var Sequence = require('../models/Sequence');
+ 
+ Sequence.nextVal('customers', function(err, doc){
+ 	if (err){
+ 	  // handle this
+ 	} else {
+ 	  console.log(doc.value);
+ 	}
+ });
+```
+
+#### Thing
+
+Thing is just a demo of something that can emit events.
+
+```javascript
+(function () {
+  "use strict";
+
+  var events = require('events'),
+    EventEmitter = events.EventEmitter,
+    util = require('util');
+
+  // TODO : This thing is a demo
+  module.exports = (function(){
+
+    var self;
+
+    function Thing(){
+      EventEmitter.call(this);
+      self = this;
+    }
+
+    util.inherits(Thing, EventEmitter);
+
+    Thing.prototype.sayHello = function(name) {
+      var message = util.format('hello, %s', name);
+      self.emit('saidHello', message);
+    };
+
+    return Thing;
+  }());
+}());
+
+```
+Usage...
+```javascript
+(function () {
+  "use strict";
+
+  var Thing = require('../models/Thing');
+
+  module.exports = function(server) {
+
+    var thing = new Thing();
+
+    server.get('/api/things', function (req, res) {
+
+      thing.on('saidHello', function (message) {
+        res.send({
+          message : message
+        });
+      });
+
+      thing.sayHello('World!');
+    });
+  };
+}());
+```
+### Routing
+
+All routes are initialised in _server.js_ via the _./routes/index.js_
+
+#### server.js index initialisation
+
+```javascript
+require('./routes')(server);
+```
+
+
+#### index.js
+
+Add new routes to _index.js_.
+```javascript
+(function () {
+  "use strict";
+
+  module.exports = function(server) {
+    // TODO : Register your routes here
+    require('./thing')(server);
+  };
+
+}());
 ```
 
 
