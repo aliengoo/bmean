@@ -14,7 +14,7 @@ There is plenty I still need to learn (as you'll see from the code).  If you pla
 
 ## Philosophy
 
-To get a working application running in under two minutes.
+To get a MEAN application running in under two minutes.
 
 * Clone
 * ```npm install```
@@ -141,7 +141,7 @@ Grunt uses _grunt-contrib-watch_, so, pretty much everything you do should get p
 
 ### MongoDB
 
-If you have got a _mongod_ instance running, then from the command line
+If you haven't got a _mongod_ instance running, then from the command line
 
 ```
 mongod
@@ -150,11 +150,19 @@ mongod
 
 ### Nodemon
 
-From the command line (only tested on OSX)
+From the command line (OSX)
 
 ```
 NODE_ENV=development nodemon --debug server.js
 ```
+
+For Windows users
+
+```
+SET NODE_ENV=development
+nodemon --debug server.js
+```
+
 ## AngularJS
 
 Anything added under the _public/app_ will automatically be included in the _public/js/app.concat.js_.
