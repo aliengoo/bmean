@@ -34,3 +34,6 @@ bower
 public/js
 public/fonts
 public/styles
+
+# Vagrant
+.vagrant
