@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Filter demo</h1>
+  </div>
+
+  <div class="col-lg-2">
+    <filter
+      template-url="app/filter-example/directives/filter-widget.html"
+      results="results"
+      element-data="elementData"
+      filter-in-progress="filterInProgress"
+      default-filter="defaultFilter"
+      service-name="filterSvc"
+      key="filterExample"
+      ></filter>
+  </div>
+  <div class="col-lg-10">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="r in results">
+          <td>{{r.firstName}}</td>
+          <td>{{r.lastName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

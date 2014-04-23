@@ -10,6 +10,7 @@
 
     // api routes
     require('./thing')(server);
+    require('./filter-example')(server);
   };
 
 }());
