@@ -16,6 +16,12 @@ There is plenty I still need to learn (as you'll see from the code).  If you pla
 
 To get a working application running in under two minutes.
 
+* Clone
+* ```npm install```
+* ```bower install```
+* ```grunt```
+* ```NODE_ENV=development nodemon --debug server.js```
+
 ## NPM Dependencies
 
 * [ExpressJS 4.x](http://expressjs.com/) - Web application framework for node.
