@@ -4,7 +4,7 @@
   var config = {
     development : {
       databaseUrl : 'mongodb://localhost/bmean',
-      port : 3000
+      port : 3001
     }
   };
 
