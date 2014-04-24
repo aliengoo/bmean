@@ -20,6 +20,8 @@
     Thing.prototype.sayHello = function(name) {
       var message = util.format('hello, %s', name);
       self.emit('saidHello', message);
+
+      return message;
     };
 
     return Thing;

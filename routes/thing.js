@@ -10,12 +10,12 @@
     server.get('/api/things', function (req, res) {
 
       thing.on('saidHello', function (message) {
-        res.send({
-          message : message
-        });
+        console.log('saidHello:', message);
       });
 
-      thing.sayHello('Mars!');
+      res.send({
+        message : thing.sayHello('Mars!')
+      });
     });
   };
 }());
