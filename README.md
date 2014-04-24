@@ -34,6 +34,12 @@ Not specifically required, but included because their handy...
 
 ### Development Dependencies
 
+Install the grunt command line interface.
+
+```
+npm install -g grunt-cli
+```
+
 * [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat) - Used specifically for AngularJS application files (makes debugging in the browser a little bit easier than using source maps - subject to change)
 * [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy) - Copies files from _bower_ directory to _/public/_ directory, e.g. font-awesome fonts, toastr css files, etc, etc.
 * [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) - 'A fool with a tool is still a fool' - Helps reduce foolishness.
