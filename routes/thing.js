@@ -15,7 +15,7 @@
         });
       });
 
-      thing.sayHello('World!');
+      thing.sayHello('Mars!');
     });
   };
 }());
