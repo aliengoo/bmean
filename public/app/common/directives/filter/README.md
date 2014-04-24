@@ -1,5 +1,7 @@
 # Filtering and Pagination
 
+__WORK IN PROGRESS__
+
 To use the ```filter``` and ```filter-pagination``` directives, there is a little bit of setup involved.
 
 The idea is that ```filter``` wraps up how filters are processed, and ```filter-pagination``` manages displaying pagination elements, and can send requests to the ```filter``` listener when a page change is required.
@@ -37,6 +39,19 @@ This information is required by the ```filter-pagination``` directive, and ultim
 ### ```filterRequest```
 
 JSON that contains the filter request.  The request must contain a ```page``` object.
+
+	{
+		"firstName" : "Homer",
+		"lastName" : "Simpson",
+		"page" : {
+				// the page the user is interested in
+				"current" : 2,
+				// the number of items to return
+				"size" : 10
+			}
+	}
+
+
 
 ## ```filter``` Directive
 
