@@ -32,6 +32,7 @@
     "modernizr": "~2.7.2",
     "momentjs": "~2.6.0",
     "stringjs": "~1.8.0",
-    "toastr": "~2.0.1"
+    "toastr": "~2.0.1",
+    "ng-Fx": "~0.3.2"
   }
 }
