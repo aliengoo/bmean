@@ -34,7 +34,8 @@ module.exports = function (grunt) {
           'bower/angular-resource/angular-resource.min.js',
           'bower/angular-ui-utils/ui-utils.min.js',
           'bower/angular-ui-router/release/angular-ui-router.min.js',
-          'bower/angular-bootstrap/ui-bootstrap-tpls.min.js'
+          'bower/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          'bower/ng-Fx/dist/ng-Fx.min.js'
         ],
         dest : 'public/js/vendor-body.js'
       }
