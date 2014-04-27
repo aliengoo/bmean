@@ -44,8 +44,11 @@
 
   module.exports = server;
 
-  server.listen(config.port || 3000, function () {
+  var listener = server.listen(config.port || 3000, function () {
     console.log('Application started');
   });
+
+  // comment this out if you don't need socket support
+  require('./routes/sockets')(listener);
 }());
 

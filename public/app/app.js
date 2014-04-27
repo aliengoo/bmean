@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  window.app = angular.module('app', ['ngResource', 'ngCookies', 'ngAnimate', 'fx.animations', 'ui.router', 'ui.utils', 'ui.bootstrap'])
+  window.app = angular.module('app', ['ngResource', 'ngCookies', 'ngAnimate', 'fx.animations', 'ui.router', 'ui.utils', 'ui.bootstrap', 'btford.socket-io'])
     .config(['$provide', '$stateProvider', '$urlRouterProvider', function ($provide, $stateProvider, $urlRouterProvider) {
 
       // TODO : Handle uncaught exceptions here

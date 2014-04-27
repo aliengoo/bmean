@@ -34,6 +34,7 @@
     "stringjs": "~1.8.0",
     "toastr": "~2.0.1",
     "ng-Fx": "~0.3.2",
-    "greensock": "~1.11.6"
+    "greensock": "~1.11.6",
+    "angular-socket-io": "~0.6.0"
   }
 }
