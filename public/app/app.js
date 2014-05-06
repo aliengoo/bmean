@@ -1,8 +1,15 @@
 (function () {
   "use strict";
 
-  window.app = angular.module('app', ['ngResource', 'ngCookies', 'ngAnimate', 'fx.animations', 'ui.router', 'ui.utils', 'ui.bootstrap', 'btford.socket-io'])
-    .config(['$provide', '$stateProvider', '$urlRouterProvider', function ($provide, $stateProvider, $urlRouterProvider) {
+  window.app = angular.module('app', ['ngResource', 'ngCookies', 'ngAnimate', 'fx.animations', 'ui.router', 'ui.utils', 'ui.bootstrap', 'btford.socket-io', 'chieffancypants.loadingBar', 'cfp.hotkeys', 'LocalStorageModule'])
+    .config(['$provide', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', 'localStorageServiceProvider', function ($provide, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider, localStorageServiceProvider) {
+
+      // TODO : Uncomment to disable the spinner
+      //cfpLoadingBarProvider.includeSpinner = false;
+
+
+      // TODO : Set the prefix for local storage
+      // localStorageServiceProvider.setPrefix('newPrefix');
 
       // TODO : Handle uncaught exceptions here
       $provide.decorator("$exceptionHandler", ['$delegate', '$injector', function ($delegate, $injector) {

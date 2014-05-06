@@ -35,6 +35,9 @@
     "toastr": "~2.0.1",
     "ng-Fx": "~0.3.2",
     "greensock": "~1.11.6",
-    "angular-socket-io": "~0.6.0"
+    "angular-socket-io": "~0.6.0",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#~1.1.0",
+    "angular-loading-bar": "~0.4.1",
+    "angular-local-storage": "~0.0.3"
   }
 }
