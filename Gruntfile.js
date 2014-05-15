@@ -25,7 +25,6 @@ module.exports = function (grunt) {
           'bower/lodash/dist/lodash.min.js',
           'bower/momentjs/min/moment.min.js',
           'bower/stringjs/lib/string.min.js',
-          'bower/amplify/lib/amplify.min.js',
           'bower/toastr/toastr.min.js',
           'bower/angular/angular.min.js',
           'bower/angular-i18n/angular-locale_en-gb.js',
@@ -37,7 +36,10 @@ module.exports = function (grunt) {
           'bower/angular-ui-router/release/angular-ui-router.min.js',
           'bower/angular-bootstrap/ui-bootstrap-tpls.min.js',
           'bower/greensock/src/minified/TweenMax.min.js',
-          'bower/ng-Fx/dist/ng-Fx.min.js'
+          'bower/ng-Fx/dist/ng-Fx.min.js',
+          'bower/angular-loading-bar/build/loading-bar.min.js',
+          'bower/angular-hotkeys/build/hotkeys.min.js',
+          'bower/angular-local-storage/angular-local-storage.min.js'
         ],
         dest : 'public/js/vendor-body.js'
       }
@@ -59,6 +61,14 @@ module.exports = function (grunt) {
           {
             src : 'bower/toastr/toastr.min.css',
             dest : 'public/styles/toastr.min.css'
+          },
+          {
+            src : 'bower/angular-loading-bar/build/loading-bar.min.css',
+            dest : 'public/styles/loading-bar.min.css'
+          },
+          {
+            src : 'bower/angular-hotkeys/build/hotkeys.min.css',
+            dest : 'public/styles/hotkeys.min.css'
           },
           {
             expand : true,
