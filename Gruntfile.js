@@ -9,11 +9,25 @@ module.exports = function (grunt) {
       },
       app : {
         files : {
-          'public/js/app.concat.js' : ['public/app/*.js', 'public/app/**/*.js', 'public/app/**/**/*.js', 'public/app/**/**/**/*.js']
+          'public/js/app.concat.js' : ['app/*.js', 'app/**/*.js']
         }
       }
     },
-
+    cssmin: {
+      combine: {
+        files: {
+          'public/styles/style.min.css': [
+            'bower/toastr/toastr.min.css',
+            'bower/animate.css/animate.min.css',
+            'bower/angular-hotkeys/build/hotkeys.min.css',
+            'bower/angular-loading-bar/build/loading-bar.min.css',
+            'public/styles/bootstrap.css',
+            'public/styles/font-awesome.css',
+            'public/styles/style.css'
+          ]
+        }
+      }
+    },
     uglify : {
       vendor_header : {
         src : ['bower/modernizr/modernizr.js'],
@@ -44,49 +58,35 @@ module.exports = function (grunt) {
         dest : 'public/js/vendor-body.js'
       }
     },
-    copy : {
-      main : {
-        files : [
+    copy: {
+      fonts: {
+        files: [
           {
-            src : 'bower/toastr/toastr.min.css',
-            dest : 'public/styles/toastr.min.css'
-          }, {
-            src : 'bower/animate.css/animate.min.css',
-            dest : 'public/styles/animate.min.css'
-          },
+            expand: true,
+            cwd: 'bower/font-awesome/fonts/',
+            src: ['**'],
+            dest: 'public/fonts/',
+            flatten: true,
+            filter: 'isFile'
+          }
+        ]
+      },
+      appHtml: {
+        files: [
           {
-            src : 'bower/animate.css/animate.min.css',
-            dest : 'public/styles/animate.min.css'
-          },
-          {
-            src : 'bower/toastr/toastr.min.css',
-            dest : 'public/styles/toastr.min.css'
-          },
-          {
-            src : 'bower/angular-loading-bar/build/loading-bar.min.css',
-            dest : 'public/styles/loading-bar.min.css'
-          },
-          {
-            src : 'bower/angular-hotkeys/build/hotkeys.min.css',
-            dest : 'public/styles/hotkeys.min.css'
-          },
-          {
-            expand : true,
-            cwd : 'bower/font-awesome/fonts/',
-            src : ['**'],
-            dest : 'public/fonts/',
-            flatten : true,
-            filter : 'isFile'
+            expand: true,
+            cwd: 'app',
+            src: ['**/*.html'],
+            dest: 'public/html/',
+            flatten: false,
+            filter: 'isFile'
           }
         ]
       }
     },
     jshint: {
-      // define the files to lint
-      files: ['Gruntfile.js', 'public/app/*.js', 'public/app/**/*.js', 'public/app/**/**/*.js', 'public/app/**/**/**/*.js'],
-      // configure JSHint (documented at http://www.jshint.com/docs/)
+      files: ['Gruntfile.js', 'app/*.js', 'app/**/*.js'],
       options: {
-        // more options here if you want to override JSHint defaults
         globals: {
           jQuery: true,
           console: true,
@@ -107,45 +107,54 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      app : {
-        files : '<%= jshint.files %>',
+      grunt: {
+        files: 'Gruntfile.js',
+        tasks: ['uglify'],
+        options: {
+          interrupt: true,
+          livereload: true
+        }
+      },
+      app: {
+        files: '<%= jshint.files %>',
         tasks: ['jshint', 'concat:app'],
         options: {
           interrupt: true,
-          livereload : true
+          livereload: true
         }
       },
-      html : {
-        files : [
-          'views/index.ejs', 'public/app/*.html', 'public/app/**/*.html', 'public/app/**/**/*.html', 'public/app/**/**/**/*.html'
+      html: {
+        files: [
+          'views/index.ejs', 'app/*.html', 'app/**/*.html'
         ],
+        tasks: ['copy:appHtml'],
         options: {
           interrupt: true,
-          livereload : true
+          livereload: true
         }
       },
-      vendor_header : {
-        files : '<%= uglify.vendor_header.src %>',
+      vendor_header: {
+        files: '<%= uglify.vendor_header.src %>',
         tasks: ['uglify:vendor_header'],
         options: {
           interrupt: true,
-          livereload : true
+          livereload: true
         }
       },
-      vendor_body : {
-        files : '<%= uglify.vendor_body.src %>',
+      vendor_body: {
+        files: '<%= uglify.vendor_body.src %>',
         tasks: ['uglify:vendor_body'],
         options: {
           interrupt: true,
-          livereload : true
+          livereload: true
         }
       },
-      less : {
-        files : ['public/bower/bootstrap/less/*.less', 'less/*.less'],
-        tasks: ['less:app'],
+      less: {
+        files: ['bower/bootstrap/less/*.less', 'less/*.less'],
+        tasks: ['less:app', 'cssmin'],
         options: {
           interrupt: true,
-          livereload : true
+          livereload: true
         }
       }
     }
@@ -157,6 +166,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['jshint', 'concat:app', 'uglify', 'less:app', 'copy', 'watch']);
+  grunt.registerTask('default', ['jshint', 'concat:app', 'uglify', 'less:app', 'copy', 'cssmin', 'watch']);
 };
